@@ -113,32 +113,35 @@ def procurarNome():
             print(f'Endereço: {resultado[4]}\n')
 
 def Menu():
-    while True:
-        print("""
-          [SISTEMA]
-          [1] - Adicionar
-          [2] - Remover
-          [3] - Alterar
-          [4] - Listar
-          [5] - Procurar
-          
-          [0] - Sair 
-          """)
-        
-        opcao = int(input('Opcao: '))
-        
-        if opcao == 1:
-            adicionar_contato()
-        if opcao == 2:
-            remover_contato()
-        if opcao == 3:
-            alterar_contato()
-        if opcao == 4:
-            listar_contatos()
-        if opcao == 5:
-            procurarNome()
-        if opcao == 0:
-            print('saindo')
-            break
+    try:
+        while True:
+            print("""
+            [SISTEMA]
+            [1] - Adicionar
+            [2] - Remover
+            [3] - Alterar
+            [4] - Listar
+            [5] - Procurar
+            
+            [0] - Sair 
+            """)
+            
+            opcao = int(input('Opcao: '))
+            
+            if opcao == 1:
+                adicionar_contato()
+            if opcao == 2:
+                remover_contato()
+            if opcao == 3:
+                alterar_contato()
+            if opcao == 4:
+                listar_contatos()
+            if opcao == 5:
+                procurarNome()
+            if opcao == 0:
+                print('saindo')
+                break
+    except ValueError:
+        Menu()
 
 Menu()
